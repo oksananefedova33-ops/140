@@ -1,0 +1,112 @@
+/* Горизонтальная навигация в топбаре */
+.nav-topbar {
+  background: #0f1622;
+  border: 1px solid #1f2b3b;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 8px 12px 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-topbar-label {
+  color: #9fb2c6;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nav-topbar-pages {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+.nav-topbar-pages::-webkit-scrollbar {
+  height: 6px;
+}
+
+.nav-topbar-pages::-webkit-scrollbar-track {
+  background: #0f1622;
+  border-radius: 3px;
+}
+
+.nav-topbar-pages::-webkit-scrollbar-thumb {
+  background: #2a3441;
+  border-radius: 3px;
+}
+
+.nav-topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: #111925;
+  border: 1px solid #213247;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.nav-topbar-item.active {
+  background: #1a2533;
+  border-color: #2ea8ff;
+}
+
+.nav-topbar-item .name {
+  color: #e4eef9;
+  font-size: 13px;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-topbar-item.active .name {
+  color: #17c964;
+  font-weight: 600;
+}
+
+.nav-topbar-item .nav-btn {
+  padding: 2px 6px;
+  font-size: 11px;
+  background: #1a2533;
+  border: 1px solid #2a3441;
+  color: #9fb2c6;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-topbar-item .nav-btn:hover {
+  background: #2a3441;
+  color: #e4eef9;
+}
+
+.nav-topbar-item .nav-btn.danger {
+  background: #3a1f1f;
+  border-color: #542b2b;
+}
+
+.nav-topbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-topbar-actions .btn {
+  white-space: nowrap;
+  font-size: 13px;
+  padding: 6px 12px;
+}
+
+/* Изменяем основную сетку - убираем левую панель */
+.wrap {
+  grid-template-columns: 1fr 320px !important;
+}
+
+/* Скрываем оригинальную левую панель */
+.wrap > .panel:first-child {
+  display: none;
+}

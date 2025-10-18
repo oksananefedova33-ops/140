@@ -1,0 +1,20 @@
+:root { --nav-w: 280px; }
+
+/* Перебиваем сетку редактора, если где-то зашито 280px */
+.wrap { grid-template-columns: var(--nav-w,280px) 1fr 320px !important; }
+
+/* Обёртка левой панели, чтобы ручка не обрезалась */
+.nav-panel { position: relative; overflow: visible !important; }
+
+/* Сама ручка — прижата к правому краю панели, поверх всего */
+.nav-resizer{
+  position:absolute; top:0; right:0; width:10px; height:100%;
+  cursor: col-resize; z-index: 1000;
+}
+.nav-resizer::before{
+  content:''; position:absolute; top:0; bottom:0; left:4px; width:2px;
+  background: rgba(255,255,255,.32); /* светлая линия на тёмной теме */
+}
+body.nav-resize-active { user-select:none; cursor: col-resize; }
+
+@media (max-width: 920px){ :root{ --nav-w: 240px; } }

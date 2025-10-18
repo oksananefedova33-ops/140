@@ -1,0 +1,22 @@
+/* /editor/assets/resize-stage.css — ручка вертикального ресайза сцены */
+.device-frame { position: relative; } /* чтобы ручка позиционировалась от рамки устройства */
+
+.stage-resizer{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height:12px;
+  cursor: ns-resize;
+  z-index:1000;
+  touch-action:none;
+}
+.stage-resizer::before{
+  content:'';
+  position:absolute;
+  left:50%; bottom:3px;
+  width:48px; height:4px;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background: rgba(255,255,255,.28);
+}
+
+body.stage-resize-active{ user-select:none; cursor: ns-resize; }
